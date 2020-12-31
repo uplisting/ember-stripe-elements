@@ -40,7 +40,7 @@ export default Component.extend({
 
     // Make the element available to the component
     set(this, 'stripeElement', stripeElement);
-    this.stripev3.addStripeElement(stripeElement);
+    get(this, 'stripev3').addStripeElement(stripeElement);
 
     // Set the event listeners
     this.setEventListeners();
@@ -70,7 +70,7 @@ export default Component.extend({
   willDestroyElement() {
     this._super(...arguments);
     const stripeElement = get(this, 'stripeElement');
-    this.stripev3.removeStripeElement(stripeElement);
+    get(this, 'stripev3').removeStripeElement(stripeElement);
     stripeElement.unmount();
   },
 
